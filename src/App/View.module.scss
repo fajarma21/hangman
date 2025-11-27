@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 500px;
+}
+
+.section {
+  position: relative;
+  margin: 0 auto 16px;
+  text-align: center;
+
+  &[data-horizontal] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,70 @@
+@keyframes updateTotalScore {
+  from {
+    scale: 0.5;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes showScore {
+  0% {
+    opacity: 0;
+  }
+  20%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 16px;
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .score {
+      position: relative;
+      h2 {
+        animation: updateTotalScore 250ms forwards
+          cubic-bezier(0.5, 0, 0.5, 1.5);
+      }
+      .addedScore {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin: 0;
+        font-weight: bold;
+        transform: translateX(-50%);
+        animation: showScore 1s forwards;
+
+        &[data-status='win'] {
+          color: var(--color-score-plus);
+        }
+        &[data-status='lose'] {
+          color: var(--color-score-min);
+        }
+      }
+    }
+  }
+}

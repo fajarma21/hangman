@@ -1,0 +1,54 @@
+@keyframes typeShow {
+  from {
+    scale: 1 0;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+
+@keyframes boxShow {
+  from {
+    scale: 0 1;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+
+.type {
+  margin: 0 auto 8px;
+  transform-origin: top center;
+  animation: typeShow 250ms forwards;
+}
+
+.boxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  &[data-reveal] {
+    gap: 0px;
+    transition: all 250ms;
+
+    .box[data-separator] {
+      background-color: transparent;
+    }
+  }
+
+  .box {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: var(--color-primary);
+    background-color: var(--color-box-border);
+    animation: boxShow 250ms forwards;
+  }
+}
