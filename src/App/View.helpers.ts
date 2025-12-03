@@ -15,6 +15,6 @@ export const getRandomWord = (list: WordData[]) => {
 };
 
 export const getGoogleUrl = (value: WordData) => {
-  const query = value.type + ' ' + value.name;
+  const query = (value.type || 'hewan') + ' ' + value.name;
   return `https://google.com/search?q=${query.trim().toLowerCase()}&hl=id`;
 };

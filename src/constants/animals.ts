@@ -38,10 +38,10 @@ export const ANIMAL_LIST = [
   { id: 35, name: 'Dugong', type: '' },
 
   { id: 36, name: 'Elang', type: 'Burung' },
-  { id: 37, name: 'Emprit', type: 'Burung' },
+  { id: 37, name: 'Pipit', type: 'Burung' },
   { id: 38, name: 'Entog', type: '' },
 
-  { id: 39, name: 'Flamingo', type: '' },
+  { id: 39, name: 'Flamingo', type: 'Burung' },
 
   { id: 41, name: 'Gabus', type: 'Ikan' },
   { id: 42, name: 'Gagak', type: 'Burung' },
@@ -61,7 +61,6 @@ export const ANIMAL_LIST = [
   { id: 53, name: 'Jaguar', type: '' },
   { id: 54, name: 'Jalak', type: 'Burung' },
   { id: 55, name: 'Jangkrik', type: '' },
-  { id: 56, name: 'Japuh', type: 'Ikan' },
   { id: 57, name: 'Jelawat', type: 'Ikan' },
   { id: 58, name: 'Jerapah', type: '' },
 

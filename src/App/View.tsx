@@ -19,6 +19,8 @@ const INITIAL_HIDDEN = (() => getRandomWord(ANIMAL_LIST))();
 const App = () => {
   const doneWords = useRef<string[]>([]);
 
+  const [allDone, setAllDone] = useState(false);
+
   const [totalScore, setTotalScore] = useState(0);
   const [score, setScore] = useState('');
 
@@ -75,9 +77,16 @@ const App = () => {
         setHiddenWord(word);
       }
     }
+    if (doneWords.current.length >= ANIMAL_LIST.length) setAllDone(true);
   };
 
   const handleReset = () => {
+    if (allDone) {
+      doneWords.current = [];
+      setTotalScore(0);
+      setAllDone(false);
+    }
+
     let randomWord = getRandomWord(ANIMAL_LIST);
     while (doneWords.current.includes(randomWord.data.name)) {
       randomWord = getRandomWord(ANIMAL_LIST);
@@ -122,18 +131,29 @@ const App = () => {
         </div>
 
         {isDone && (
-          <div className={css.section} data-horizontal>
-            <Button
-              variant="secondary"
-              href={getGoogleUrl(wordData)}
-              target="_blank"
-            >
-              <FaMagnifyingGlass />
-            </Button>
-            <Button autoFocus={isDone} onClick={handleReset}>
-              Play Again
-            </Button>
-          </div>
+          <>
+            {allDone && (
+              <div className={css.section}>
+                <p>
+                  ⭐️ You have guessed all the words! ⭐️
+                  <br />
+                  <b>Final score: {totalScore}</b>
+                </p>
+              </div>
+            )}
+            <div className={css.section} data-horizontal>
+              <Button
+                variant="secondary"
+                href={getGoogleUrl(wordData)}
+                target="_blank"
+              >
+                <FaMagnifyingGlass />
+              </Button>
+              <Button autoFocus={isDone} onClick={handleReset}>
+                {allDone ? 'Reset' : 'Play Again'}
+              </Button>
+            </div>
+          </>
         )}
       </div>
     </>
