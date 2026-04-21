@@ -7,9 +7,12 @@ const Input = ({ onFocusCallback, ...restProps }: InputProps) => {
   const { disabled, value } = restProps;
   const handleForceFocus = (e: FocusEvent<HTMLInputElement>) => {
     if (!disabled)
-      e.target.focus({
-        preventScroll: true,
-      });
+      setTimeout(() => {
+        e.target.focus({
+          preventScroll: true,
+        });
+      }, 50);
+
     onFocusCallback();
   };
 
