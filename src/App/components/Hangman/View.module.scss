@@ -32,6 +32,18 @@
   margin: 0 auto 16px;
 }
 
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  p {
+    margin: 0;
+  }
+}
+
 .gallows {
   position: absolute;
   top: 50%;

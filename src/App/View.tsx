@@ -14,6 +14,8 @@ import css from './View.module.scss';
 import { useIntersect } from 'fajarma-react-lib';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 
+// TODO: category picker
+
 const INITIAL_HIDDEN = (() => getRandomWord(ANIMAL_LIST))();
 
 const App = () => {
