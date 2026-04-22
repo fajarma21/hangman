@@ -1,4 +1,5 @@
 import {
+  FaBox,
   FaRegFaceDizzy,
   FaRegFaceLaughSquint,
   FaRegFaceSadCry,
@@ -13,6 +14,11 @@ const Hangman = ({ children, count, status }: HangmanProps) => {
 
   return (
     <div className={css.container}>
+      <div className={css.category}>
+        <FaBox />
+        <p>Animal - Bahasa</p>
+      </div>
+
       <div className={css.gallows}>
         <div className={css.horizontal} />
         <div className={css.vertical} />
